@@ -19,6 +19,7 @@
 
 body{
     font-family: var(--Poppins);   
+    scroll-behavior: smooth;
 }
 
 header{
@@ -78,7 +79,7 @@ header ul > li:last-child a{
     justify-content: center;
     align-items: center;   
     flex-direction: column;
-    padding: 100px var(--Section-padding);
+    padding: 200px var(--Section-padding);
 }
 
 .Services .gridContainer{
@@ -115,7 +116,7 @@ header ul > li:last-child a{
 
 
 .Testimonials{
-    background-color: rgba(165, 203, 188, 0.4);
+    background-color: var(--green);
     padding: 100px var(--Section-padding);
     display: flex;
     justify-content: center;
@@ -129,6 +130,13 @@ header ul > li:last-child a{
     gap: 100px;
 
 }
+
+
+.Testimonials .review{
+    border:  1px solid rgb(87, 174, 141);
+    padding: 20px;
+}
+
 
 .Testimonials .review h3,.Testimonials .review small{
     text-align: right;
@@ -144,6 +152,9 @@ header ul > li:last-child a{
     color: var(--green);
 }
 
+.Testimonials p{
+    color: var(--white);
+}
 
 .booking{
     padding: 100px var(--Section-padding);
@@ -177,13 +188,14 @@ footer .icons{
 
 .checkoutServices{
     padding: 100px var(--Section-padding);
+    background-color: rgb(44 49 47);
 
 }
 
 .checkoutServices > h1{
     text-align: center;
     margin-bottom: var(--Section-padding);
-    color: var(--green);
+    color: rgb(105 198 156);
 }
 
 .checkoutServices > div{
@@ -200,10 +212,21 @@ footer .icons{
     gap: 20px;
     border: 3px solid var(--white);
     padding: var(--Section-padding);
-    border-radius: 30px;
-    background-color: rgb(215, 223, 215);
-    background: linear-gradient(rgba(168, 201, 188, 0.6),rgba(0,0,0,0.9));
+    border-radius: 10px;
+    /* background-color: rgb(215, 223, 215); */
+    /* background: linear-gradient(rgba(168, 201, 188, 0.6),rgba(0,0,0,0.9)); */
+    border: 1px solid var(--white);
+    box-shadow: 1px 1px 10px white;
 }
+
+
+
+.checkoutServices .service h3{
+    color: rgb(105 198 156);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
 
 .checkoutServices .service p{
     color: var(--white);
@@ -211,7 +234,7 @@ footer .icons{
 
 .checkoutServices .service i{
     font-size: 3rem;
-    color: var(--green);
+    color: rgb(105 198 156);
 }
 
 
@@ -220,3 +243,198 @@ body{
     margin: auto;
 }
 
+header nav, .menuIcon{
+    z-index: 1000;
+}
+
+
+.menuIcon{
+    display: none;
+    font-size: 2rem;
+}
+
+.menuIcon{
+    display: none;
+}
+
+
+i.fa-xmark{
+    display: none;
+}
+
+.Contactus{
+    display: flex;
+    padding: var(--topdown-padding) var(--overallpadding);
+    background-color: rgba(2, 2, 2, 0.9) ;
+    color: white;
+    padding: 50px;
+}
+
+.Contactus  > *{
+    width: 100%;
+}
+
+
+.Contactus form *{
+    display: block;
+    width: 100%;
+}
+
+.Contactus form{
+    margin-right: var(--overallpadding);
+    margin-right: 30px;
+}
+
+.Contactus form input, footer form textarea{
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+.Contactus input[type=submit]{
+    background-color: var(--black-color);
+    color: var(--white-color);
+}
+
+
+
+.Contactus input[type=submit]:hover{
+    background-color: var(--green);
+    border-color: transparent;
+}
+
+
+.Contactus .others > *{
+    margin-bottom: 20px;
+}
+
+.hideMenu{
+    display: none !important;
+}
+
+@media only screen and (max-width: 992px) {
+    header nav{
+        display: none;
+    }
+
+
+    :root{
+        --Section-padding : 20px;
+    }
+
+    header   h1{
+        font-size: 1.5rem;
+    }
+
+    .section1{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .section1 h1{
+        font-size: 1.3rem;
+    }
+
+
+    
+    .Services .gridContainer{
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 50px;
+    }
+    
+
+    .Services    > p {
+        /* padding: 20px; */
+        text-align: center;
+
+    }
+
+    .checkoutServices > div{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .Testimonials .carousel{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+
+    
+    header .menuIcon{
+        display: block;
+    }
+
+
+    .showNav nav ul{   
+        flex-direction: column;
+        gap: 50px;
+        align-items: start  ;
+    }
+    
+     .showNav nav{
+        display: block;
+        background-color: rgba(21, 22, 22, 0.9) !important;
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 300px;
+        height: 100%;
+        padding: 30px;
+    }
+    
+    .showNav .fa-xmark{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin:30px ;
+    }
+
+    .showNav{
+        position: static;
+     }
+
+     .showNav li a{
+        color: var(--white);
+     }
+
+     .showNav i.fa-xmark{
+        color: var(--white);
+     }
+
+     .checkoutServices .heading{
+        margin-bottom: 50px;
+        font-size: 2rem;
+        letter-spacing: 5px;
+        font-family: 'Open Sans', sans-serif;
+     }
+
+     .Testimonials .heading{
+        margin-bottom: 20px;
+        font-size: 2rem;
+        letter-spacing: 5px;
+        font-family: 'Open Sans', sans-serif;
+        text-align: center;
+     }
+
+     .Testimonials > .text{
+        margin-bottom: 50px;
+        padding-left: 20px;
+     }
+     
+     .booking .heading{
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+     }
+
+     .Contactus{
+        flex-direction: column;
+     }
+     .Contactus .form{
+        margin-bottom: 50px;
+        margin-right: 0;
+     }
+}
+
+/* rgb(111 124 118) */
